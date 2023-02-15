@@ -1,6 +1,6 @@
 import Player from "./Player.js";
 import MainDeck from "./cards/MainDeck.js";
-import Pile from "./cards/Pile.js";
+import OrderedPile from "./cards/OrderedPile.js";
 
 class Game {
   constructor(numPlayers) {
@@ -9,7 +9,7 @@ class Game {
     this.players = [];
     this.mainDeck = new MainDeck();
     this.mainDeck.shuffle();
-    this.centerRow = new Pile();
+    this.centerRow = new OrderedPile();
     for (let i = 0; i < 6; i++) {
       this.centerRow.addCard(this.mainDeck.popCard());
     }

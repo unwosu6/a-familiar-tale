@@ -1,6 +1,6 @@
-import Pile from "./Pile.js";
+import OrderedPile from "./OrderedPile.js";
 
-class Hand extends Pile {
+class Hand extends OrderedPile {
   constructor() {
     super()
   }

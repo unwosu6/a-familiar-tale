@@ -1,6 +1,6 @@
-import Pile from "./Pile.js";
+import UnorderedPile from "./UnorderedPile.js";
 
-class Discard extends Pile {
+class Discard extends UnorderedPile {
   constructor() {
     super()
   }

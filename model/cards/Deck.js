@@ -1,18 +1,18 @@
-import Card from "./Card.js";
-import BasicCard from "./BasicCard.js";
-import Pile from "./Pile.js";
+import CardFactory from "./CardFactory.js";
+import UnorderedPile from "./UnorderedPile.js";
 import {BasicType} from "../util/enums.js";
 
-class Deck extends Pile {
+class Deck extends UnorderedPile {
   constructor() {
     super();
+    const cardFactory = new CardFactory();
     let card;
     for (let i = 0; i < 8; i++) {
-      card = new BasicCard(BasicType.MANA);
+      card = cardFactory.makeBasicCard(BasicType.MANA)
       this.cards.push(card);
     }
     for (let i = 0; i < 2; i++) {
-      card = new BasicCard(BasicType.ATTACK);
+      card = cardFactory.makeBasicCard(BasicType.ATTACK);
       this.cards.push(card);
     }
   }

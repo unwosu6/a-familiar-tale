@@ -11,5 +11,7 @@ const BasicType = {
   ATTACK: 1
 };
 
-export {Type, BasicType};
+const MainDeckCardIDs = {};
+
+export {Type, BasicType, MainDeckCardIDs};
 
