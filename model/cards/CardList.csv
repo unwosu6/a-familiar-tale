@@ -1,0 +1,40 @@
+Card Name,Card Type,Card Cost,Card Ability,Quantity,Fulfillment Points
+Diamond Knuckles,Relic,3,Gain +1 attack each turn.,3,1
+Wellspring of Knowledge,Relic,7,Once per turn you may draw a card.,1,3
+Imperfect Wellspring,Relic,4,"Once per turn you may draw 1 card, then discard 1 card.",2,2
+Three-Faced Mask,Relic,7,"Gain +1 cruelty, cunning, or kindness each turn.",1,3
+Philosopher's Stone,Relic,7,Gain +2 mana each turn.,1,3
+Golden Spindle,Relic,5,Gain +1 mana each turn.,2,2
+Throne of Bones,Relic,4,Gain +1 cruelty each turn.,3,2
+Hero's Medallion,Relic,4,Gain +1 kindness each turn.,3,2
+Creator's Encyclopedia,Relic,4,Gain +1 cunning each turn.,3,2
+Berserker Sword,Relic,7,Gain +3 attack each turn.,1,3
+Collector's Curio Case,Relic,6,Relics cost 1 less mana to acquire from the center row.,1,3
+Visionary's Spectactles,Relic,3,Once per turn you may spend an attack to replace a card in the center row.,2,1
+Corrupted Curio Case,Relic,3,You may place another player's relic into their discard pile. Effect usable one time only.,2,2
+Ivory Glaive,Relic,8,Take a card at random from an opponent's hand. Effect usable one time only.,1,6
+Rat Infestation,Monster,2,Draw one card.,4,1
+Vengeful Ghoul,Monster,3,Gain +2 attack.,4,1
+Magic Duneworm,Monster,3,Gain +1 mana.,4,2
+Wendigo,Monster,4,Draw two cards.,3,2
+Headless Horseman,Monster,4,Place another player's relic into their discard pile.,3,3
+Ogre of Silence,Monster,5,Choose one opponent. They cannot use the effects of relic cards on their next turn.,3,4
+Three-Faced Oni,Monster,5,"Gain +2 cruelty, cunning, or kindness.",3,4
+Corrupted Archbishop,Monster,6,Choose an opponent. They discard one card at random.,2,5
+Ouroboros,Monster,7,Draw 3 cards.,1,5
+Cruel Creator,Monster,8,Acquire one legendary familiar.,1,4
+Raid Member,Guild Member,2,Gain +2 attack.,4,1
+Raid Leader,Guild Member,4,Gain +3 attack.,4,2
+Guild Promoter,Guild Member,5,"Gain +2 mana, then gain +1 mana for each other unique guild member you play this turn.",2,2
+Mage,Guild Member,3,Gain +2 mana.,4,1
+Wizard,Guild Member,6,Gain +3 mana.,2,3
+Saboteur,Guild Member,3,"Draw a card, then you may banish a card from the center row.",2,1
+Collector,Guild Member,2,Draw a card. You can acquire a relic for one less mana this turn.,4,1
+Mimic,Guild Member,5,Copy the effect of a guild member or spirit you have played this turn.,2,2
+Three-Faced Apprentice,Guild Member,4,"Gain +2 cruelty, cunning, or kindness.",2,2
+Guild Captain,Guild Member,8,Draw a card for each unique guild member you play this turn (including this one).,1,3
+Grand Sage,Guild Member,7,Gain +1 mana and +1 attack for each unique guild member you play this turn (including this one).,1,3
+Playful Spirit,Basic Spirit,N/A,Gain +1 mana.,N/A,0
+Vengeful Spirit,Basic Spirit,N/A,Gain +1 attack.,N/A,0
+Greater Playful Spirit,Basic Spirit,3,Gain +2 mana.,N/A,1
+Greater Vengeful Spirit,Basic Spirit,2,Gain +2 attack.,N/A,1

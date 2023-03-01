@@ -9,8 +9,8 @@ class ActionList {
     this.lst.push(action);
   }
 
-  act() {
-    this.lst.forEach(action => { action.act() });
+  act(player) {
+    this.lst.forEach((action) => { action.act(player) });
   }
 }
 

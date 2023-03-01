@@ -1,0 +1,13 @@
+Card Name,Card Type,Card Cost,Card Ability,Quantity,Fulfillment Points
+Dragon Familiar,Cruel Familiar,3 Cruel,Gain +2 attack. Then you may banish a card in the center row and search for a monster.,3,2
+Lion Familiar,Cruel Familiar,3 Cruel,Gain +4 attack.,3,2
+Goat Familiar ,Cruel Familiar,3 Cruel,"Gain +2 attack. You may defeat one monster in the great beyond pile this turn, then place it on the bottom of the main deck.",3,2
+Chimera Familiar,Legendary Cruel Familiar,12 Cruel,Defeat one monster in the center row OR gain +6 attack.,1,6
+Lamb Familiar,Kind Familiar/Guild Member,3 Kind,Gain +2 mana. Each guild member costs one less mana to recruit this turn.,3,2
+Dog Familiar,Kind Familiar/Guild Member,3 Kind,Gain +2 mana. Then you may banish a card from the center row and search for a guild member.,3,2
+Cat Familiar,Kind Familiar/Guild Member,3 Kind,Gain +2 mana. This card counts as having played two unique guild member names.,3,2
+Turtle Familiar,Legendary Kind Familiar/Guild Member,12 Kind,Play one guild member from the center row as if it were in your hand OR draw 3 cards.,1,6
+Owl Familiar,Cunning Familiar,3 Cunning,Acquire one relic from the center row that costs 5 or less OR draw one card.,3,2
+Wolf Familiar,Cunning Familiar,3 Cunning,"Draw 2 cards, then discard one card. If you discarded a relic, then put it into play.",3,2
+Snake Familiar,Cunning Familiar,3 Cunning,Gain +2 mana. Then you may banish a card from the center row and search for a relic.,3,2
+Elephant Familiar,Legendary Cunning Familiar,12 Cunning,Choose another player's relic and put it into play OR play one relic from the center row and draw 1 card.,1,6

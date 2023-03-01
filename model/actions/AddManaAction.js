@@ -6,8 +6,9 @@ class AddManaAction extends Action {
     this.amount = amount;
   }
 
-  act() {
+  act(player) {
     // add this.amount to the players mana on that turn
+    player.mana += this.amount;
   }
 
 }

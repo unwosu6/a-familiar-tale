@@ -2,7 +2,7 @@ class Action {
   constructor() {
   }
   
-  act() {  
+  act(player) {  
     // throw exception?
   }
 }

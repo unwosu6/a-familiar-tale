@@ -1,10 +1,10 @@
 import ActionList from "../actions/ActionList.js";
-
+import { Type } from "../util/enums.js";
 class Card {
   // type: basic, added, ruin, guild member, monster
   // basic cards cannot be bought
   // monster cards cannot be bought
-  constructor(id, name, type, cost, fulfilment, description) {
+  constructor(id, name, type, cost, description, fulfilment) {
     this.id = id
     this.name = name;
     this.type = type;
@@ -12,7 +12,22 @@ class Card {
     this.fulfilment = fulfilment;
     this.description = description;
     this.actionList = new ActionList();
-    // this.id
+  }
+
+  getTypeString() {
+    let type;
+    if (this.type === Type.BASIC_SPIRIT) {
+      type = "basic spirit";
+    } else if (this.type === Type.GREATER_BASIC_SPIRIT) {
+      type = "greater basic spirit";
+    } else if (this.type === Type.RELIC) {
+      type = "relic";
+    } else if (this.type === Type.GUILD_MEMBER) {
+      type = "guild member";
+    } else if (this.type === Type.MONSTER) {
+      type = "monster";
+    }
+    return type;
   }
 
   getDescription() {
@@ -22,14 +37,15 @@ class Card {
   toString() {
     const cardText = 
       `${this.name}  
-      type: ${this.type}
+      type: ${this.getTypeString(this.type)}
       cost: ${this.cost}
-      fulfilment: ${this.fulfilment}`
+      fulfilment: ${this.fulfilment}
+      description: ${this.description}`
     return cardText;
   }
 
-  play() {
-    this.actionList.act();
+  play(player) {
+    this.actionList.act(player);
   }
 
   addAction(action) {

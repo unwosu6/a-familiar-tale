@@ -1,17 +1,16 @@
 const Type = {
-  BASIC: 0,
-  ELEVATED: 1, 
-  RUIN: 2,
+  BASIC_SPIRIT: 0,
+  GREATER_BASIC_SPIRIT: 1,
+  RELIC: 2,
   GUILD_MEMBER: 3,
-  MONSTER: 4
+  MONSTER: 4,
 };
 
 const BasicType = {
   MANA: 0,
-  ATTACK: 1
+  ATTACK: 1,
 };
 
 const MainDeckCardIDs = {};
 
-export {Type, BasicType, MainDeckCardIDs};
-
+export { Type, BasicType, MainDeckCardIDs };

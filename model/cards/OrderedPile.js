@@ -1,6 +1,6 @@
 import Pile from "./Pile.js";
 
-// player's hand, center row, great beyond
+// player's hand, player's played cards, player's relics in play, center row, great beyond
 
 class OrderedPile extends Pile {
   constructor() {
@@ -12,6 +12,12 @@ class OrderedPile extends Pile {
       // throw exception
     }
     return this.cards[i];
+  }
+
+  removeCard(i) {
+    const card = this.getCard(i);
+    this.cards.splice(i, 1);
+    return card;
   }
 }
 

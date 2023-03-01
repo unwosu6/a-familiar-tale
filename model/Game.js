@@ -10,6 +10,9 @@ class Game {
     this.mainDeck = new MainDeck();
     this.mainDeck.shuffle();
     this.centerRow = new OrderedPile();
+    this.centerRowTotalCards = 6;
+    this.greatBeyond = new OrderedPile();
+    
     for (let i = 0; i < 6; i++) {
       this.centerRow.addCard(this.mainDeck.popCard());
     }
@@ -29,8 +32,16 @@ class Game {
   }
 
   printCenterRow() {
-    console.log("CENTER ROW: ")
+    console.log("+++CENTER ROW+++")
     console.log(this.centerRow.toString());
+  }
+
+  removeCenterRowCard(num) {
+    if (num > this.centerRow.centerRowTotalCards - 1 || num < 0) {
+      // throw exception
+    }
+    this.centerRow.removeCard(num);
+    this.centerRow.addCard(this.mainDeck.popCard());
   }
 
   isGameOver() {
