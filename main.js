@@ -12,8 +12,8 @@ while (numPlayers > 3 || numPlayers < 2) {
 
 let game = new Game(numPlayers);
 
-let gameOver = false;
-let curPlayer = 0;
+// let gameOver = false;
+// let curPlayer = 0;
 
 // const x = [[0,"yes",3], [2,3,1]];
 // for (let i = 0; i < x.length; i++) {
@@ -74,18 +74,18 @@ function playTurn(player) {
   player.endTurn();
 }
 
-while (!gameOver) {
-  gameOver = game.isGameOver();
+while (!game.gameOver) {
+  game.gameOver = game.isGameOver();
 
   game.printCenterRow();
 
-  let player = game.getPlayer(curPlayer);
+  let player = game.getPlayer(game.curPlayer);
 
-  console.log(`Player ${curPlayer + 1}'s turn:`);
+  console.log(`Player ${game.curPlayer + 1}'s turn:`);
   player.drawHand();
 
   playTurn(player);
 
-  curPlayer++;
-  curPlayer = curPlayer % numPlayers;  
+  game.curPlayer++;
+  game.curPlayer = game.curPlayer % numPlayers;  
 }

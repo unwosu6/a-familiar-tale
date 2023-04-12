@@ -7,7 +7,8 @@ import OrderedPile from "./cards/OrderedPile.js";
 // a player has a hand, a deck, and a discard
 
 class Player {
-  constructor() {
+  constructor(game) {
+    this.game = game;
     this.deck = new Deck();
     this.deck.shuffle();
     this.discard = new Discard();
@@ -72,12 +73,12 @@ class Player {
 
   playCard(num) {
     let card = this.hand.removeCard(num);
-    card.play(this);
+    card.play(this.game);
     this.playedCards.addCard(card);
   } 
 
   killMonster(card) {
-    card.play(this);
+    card.play(this.game);
     this.fulfilment += card.fulfilment;
   }
 

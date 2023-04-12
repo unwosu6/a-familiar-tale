@@ -44,6 +44,7 @@ addCard(id, name, type, cost, description, quantity, fulfilment) {
         card.addAction(action);
       }
       // +2 mana cards
+      // check for set membership
       if (card.id === 5 ||
           card.id === 27 ||
           card.id === 28) {

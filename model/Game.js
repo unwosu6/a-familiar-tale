@@ -6,19 +6,21 @@ class Game {
   constructor(numPlayers) {
     this.numQuests = 0;
     this.numPlayers = numPlayers;
+    this.curPlayer = 0;
     this.players = [];
     this.mainDeck = new MainDeck();
     this.mainDeck.shuffle();
     this.centerRow = new OrderedPile();
     this.centerRowTotalCards = 6;
     this.greatBeyond = new OrderedPile();
-    
+    this.gameOver = false;
+
     for (let i = 0; i < 6; i++) {
       this.centerRow.addCard(this.mainDeck.popCard());
     }
     
     for (let i = 0; i < numPlayers; i++) {
-      let player = new Player();
+      let player = new Player(this);
       this.players.push(player);
     }
      
