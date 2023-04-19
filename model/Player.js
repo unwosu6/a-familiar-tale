@@ -16,6 +16,7 @@ class Player {
     this.handSize = 5;
     this.playedCards = new OrderedPile();
     this.relicsInPlay = new OrderedPile();
+    this.usedRelics = new Set();
 
     // karma scores, never reset
     this.kindness = 0;
@@ -71,10 +72,20 @@ class Player {
     }
   }
 
-  playCard(num) {
+  playCardFromHand(num) {
     let card = this.hand.removeCard(num);
     card.play(this.game);
     this.playedCards.addCard(card);
+  } 
+
+  useSingleUseRelic(num) {
+    if (this.usedRelics.has(card.id)) {
+      // error message, this relic cannot be used c
+      console.log("This relic has already been used")
+    }
+    let card = this.relicsInPlay.getCard(num);
+    card.play(this.game);
+    this.usedRelics.add(card.id);
   } 
 
   killMonster(card) {

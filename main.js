@@ -1,4 +1,5 @@
 import Game from "./model/Game.js";
+import CLI from "./CLI/CLI.js";
 import promptSync from 'prompt-sync';
 import { Type } from "./model/util/enums.js";
 
@@ -11,81 +12,73 @@ while (numPlayers > 3 || numPlayers < 2) {
 }
 
 let game = new Game(numPlayers);
+let cli = new CLI();
 
-// let gameOver = false;
-// let curPlayer = 0;
+// function playTurn(player) {
+//   player.drawHand();
+//   player.mana = 0;
+//   player.attack = 0;
 
-// const x = [[0,"yes",3], [2,3,1]];
-// for (let i = 0; i < x.length; i++) {
-//   for (let j = 0; j < x[i].length; j++) {
-//     console.log(x[i][j]);
+//   while (player.hasCardsInHand()) {
+//     player.printHand();
+    
+//     let ans;
+//     const choices = Set(["1", "2", "3", "4", "5"]);
+//     while (!choices.has(ans)) {
+//       ans = prompt(
+//         `Choices:
+//         [1] Play Card,
+//         [2] Interact with the Center Row,
+//         [3] Buy a Failiar,
+//         [4] Use Single-Use Relic
+//         [5] End Turn`
+//       );
+//     }
+
+//     if (ans === "1") {
+//       playCardChoice.choose();
+//       player.printPlayedCards();
+//     } else if (ans === "2") {
+//       centerRowChoice.choose();
+//     } else if (ans === "3") {
+//       buyFamiliarChoice.choose();
+//     } else if (ans === "4") {
+//       useRelicChoice.choose();
+//     } else {
+//       break;
+//     }
+//     // maybe just reprint everything
+//     player.printStats();    
 //   }
+//   player.endTurn();
 // }
 
-// function xyz(a, b, c) {
-//   console.log(a + b);
+// possible_interactions = game.possible_interactions()
+// choice = prompt_user(game, possible_interactions)
+// result = game.apply_choice(choice)
+// show_result(result)
+
+while (true) {
+  let possibleInteractions = game.getPossibleInteractions();
+  // UI should be a completely seperate component:
+  // UI.promptUser(game, possibleInteractions)
+  let choice = cli.promptUser(game, possibleInteractions);
+  let result = game.applyChoice(choice);
+  // UI.showResult(game, result)
+  cli.showResult(game, result);
+}
+
+// while (!game.gameOver) {
+//   game.gameOver = game.isGameOver();
+
+//   game.printCenterRow();
+
+//   let player = game.getPlayer(game.curPlayer);
+
+//   console.log(`Player ${game.curPlayer + 1}'s turn:`);
+
+//   playTurn(player);
+
+//   game.curPlayer++;
+//   game.curPlayer = game.curPlayer % numPlayers;  
 // }
-
-// const x = [1, 3];
-// x.forEach((num) => {
-//   xyz.apply(this, x);
-// });
-
-function playTurn(player) {
-  player.mana = 0;
-  player.attack = 0;
-
-  while (player.hasCardsInHand()) {
-    player.printHand();
-    let ans = prompt("end turn? y/n: ");
-    if (ans === "y") {
-      break;
-    }
-    let num = prompt("enter number of card to play: ");
-    player.playCard(num);
-    player.printPlayedCards();
-    player.printStats();
-
-    // interact with center row
-    ans = prompt("do you want to buy a ruin, recruit a guild member, or fight a monster in the center row? y/n: ");
-    if (ans === "y") {
-      num = prompt("enter number of card from center row: ");
-      let centerCard = game.centerRow.getCard(num);
-      if (centerCard.type === Type.MONSTER) {
-        if (player.attack >= centerCard.cost) {
-          game.greatBeyond.addCard(game.removeCenterRowCard(num));
-          player.killMonster();
-          game.centerRow.add
-        } else {
-          console.log("INSUFFICIENT ATTACK");
-        }
-      } else {
-        if (player.mana >= centerCard.cost) {
-          player.discard.addCard(game.removeCenterRowCard(num));
-        } else {
-          console.log("INSUFFICIENT MANA");
-        }
-      }
-      player.printStats();
-    }
-    
-    
-  }
-  player.endTurn();
-}
-
-while (!game.gameOver) {
-  game.gameOver = game.isGameOver();
-
-  game.printCenterRow();
-
-  let player = game.getPlayer(game.curPlayer);
-
-  console.log(`Player ${game.curPlayer + 1}'s turn:`);
-  player.drawHand();
-
-  playTurn(player);
-
-  game.curPlayer++;
-  game.curPlayer = game.curPlayer % numPlayers;  
-}
