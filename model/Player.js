@@ -78,6 +78,15 @@ class Player {
     this.playedCards.addCard(card);
   } 
 
+  playCardFromHandById(id) {
+    for (let i = 0; i < this.hand.getNumCards(); i++) {
+      if (this.hand.getCard(i).id === id) {
+        this.playCardFromHand(i);
+        return;
+      }
+    }
+  }
+
   useSingleUseRelic(num) {
     if (this.usedRelics.has(card.id)) {
       // error message, this relic cannot be used c

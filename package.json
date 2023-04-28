@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "dependencies": {
-    "prompt-sync": "^4.2.0"
+    "@faker-js/faker": "^7.6.0",
+    "@mui/material": "^5.12.2",
+    "prompt-sync": "^4.2.0",
+    "react-router-dom": "^6.10.0"
   }
 }

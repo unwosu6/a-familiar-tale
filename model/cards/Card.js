@@ -1,10 +1,13 @@
 import ActionList from "../actions/ActionList.js";
 import { Type } from "../util/enums.js";
+import { faker } from '@faker-js/faker';
+
 class Card {
   // type: basic, added, ruin, guild member, monster
   // basic cards cannot be bought
   // monster cards cannot be bought
   constructor(id, name, type, cost, description, fulfilment) {
+    this.uuid = faker.datatype.uuid();
     this.id = id
     this.name = name;
     this.type = type;
