@@ -47,8 +47,8 @@ class Card {
     return cardText;
   }
 
-  play(player) {
-    this.actionList.act(player);
+  play(game) {
+    this.actionList.act(game);
   }
 
   addAction(action) {

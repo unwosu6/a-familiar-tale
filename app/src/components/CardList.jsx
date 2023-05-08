@@ -1,6 +1,7 @@
 import GameCard from "./GameCard.jsx";
 
 import { Card, CardActionArea, Grid, Typography, Box, AccordionDetails } from "@mui/material";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 function CardList(props) {

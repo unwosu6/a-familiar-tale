@@ -4,16 +4,28 @@ import { Button } from "@mui/material";
 import Game from "../../../model/Game.js";
 
 function EndTurnButton(props) {
-  const { game, setGameStateChange } = props;
+  const { game, setPlayers, setGameStateChange } = props;
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    game.getCurPlayer().endTurn();
-    game.updatePlayer();
-    game.getCurPlayer().drawHand();
+    let results = game.getCurPlayer().endTurn();
+    for (let result of results) {
+      if (result.message) {
+      alert(result.message);
+      }
+    }
+    let result = game.updatePlayer();
+    if (result.message) {
+      alert(result.message);
+    }
+    if (result.success === false) {
+      setPlayers(result.players);
+      navigate("/game-over", { replace: true });
+    }
     setGameStateChange((prevState, props) => ({
       counter: prevState.counter + 1,
     }));
+
   };
   return (
 

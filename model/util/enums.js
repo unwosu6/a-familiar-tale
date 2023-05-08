@@ -11,6 +11,8 @@ const BasicType = {
   ATTACK: 1,
 };
 
+const SingleUseRelicIDs = new Set([13, 14]);
+
 const MainDeckCardIDs = {};
 
-export { Type, BasicType, MainDeckCardIDs };
+export { Type, BasicType, MainDeckCardIDs, SingleUseRelicIDs };

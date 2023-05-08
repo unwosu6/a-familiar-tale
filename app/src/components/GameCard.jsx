@@ -20,7 +20,10 @@ function GameCard(props) {
   };
 
   const handleOnClickCenterRowCard = (event) => {
-    console.log(card.name);
+    let result = game.getCurPlayer().buyCenterRowCardById(card.id);
+    if (result.error) {
+      alert(result.error);
+    }
     setGameStateChange((prevState, props) => ({
       counter: prevState.counter + 1,
     }));
@@ -28,14 +31,33 @@ function GameCard(props) {
 
   const handleOnClickHandCard = (event) => {
     // console.log("GAME", card.id);
-    game.getCurPlayer().playCardFromHandById(card.id);
+    let result = game.getCurPlayer().playCardFromHandById(card.id);
+    if (result.error) {
+      alert(result.error);
+    }
     setGameStateChange((prevState, props) => ({
       counter: prevState.counter + 1,
     }));
   };
 
   const handleOnClickPlayedCard = (event) => {
-    alert("You cannot un-play a card");
+    let result = game.getCurPlayer().playCardFromPlayedCardsById(card.id);
+    if (result.error) {
+      alert(result.error);
+    }
+    setGameStateChange((prevState, props) => ({
+      counter: prevState.counter + 1,
+    }));
+  };
+
+  const handleOnClickRelicCard = (event) => {
+    let result = game.getCurPlayer().playRelicByUuid(card.uuid);
+    if (result.error) {
+      alert(result.error);
+    }
+    setGameStateChange((prevState, props) => ({
+      counter: prevState.counter + 1,
+    }));
   };
 
   if (cardType === "center row") {
@@ -44,6 +66,8 @@ function GameCard(props) {
     handleOnClick = handleOnClickHandCard;
   } else if (cardType === "played") {
     handleOnClick = handleOnClickPlayedCard;
+  } else if (cardType === "relic") {
+    handleOnClick = handleOnClickRelicCard;
   }
 
   return (

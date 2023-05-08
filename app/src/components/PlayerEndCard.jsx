@@ -14,23 +14,35 @@ const styles = {
   paper: {
     margin: "1rem",
   },
-  curPaper: {
+  winPaper: {
     background: "lavenderblush",
     margin: "1rem",
   },
 };
 
-function PlayerInfo(props) {
+function PlayerEndCard(props) {
   const { game, playerNum } = props;
   const player = game.getPlayer(playerNum);
+  
 
   const getStyle = () => {
-    if (game.curPlayer === playerNum) {
-      return styles.curPaper;
+    if (game.playerWinOrder[0] === playerNum) {
+      return styles.winPaper;
     } else {
       return styles.paper;
     }
   };
+
+  const getPlace = () => {
+    if (game.playerWinOrder[0] === playerNum) {
+      return "First";
+    } else if (game.playerWinOrder[1] === playerNum) {
+      return "Second";
+    } else if (game.playerWinOrder.length >= 3 && game.playerWinOrder[2] === playerNum) {
+      return "third";
+    }
+    return "...";
+  }
 
   return (
     <Box>
@@ -45,21 +57,16 @@ function PlayerInfo(props) {
           >
             <Grid item>
               <Typography variant={"h6"} fontWeight={"bold"}>
-                Player {playerNum + 1} <br />
+                {getPlace()} Place: Player {playerNum + 1} <br />
               </Typography>
             </Grid>
             <Grid item>
+            </Grid>
+            <Grid item>
+              {player.wonKindness ? ( <Typography variant="subtitle" color={"#707070"}>Won the Kindness Quest <br /></Typography>) : (<></>) }
+              {player.wonCunning ? ( <Typography variant="subtitle" color={"#707070"}>Won the Cunning Quest <br /></Typography>) : (<></>) }
+              {player.wonCruelty ? ( <Typography variant="subtitle" color={"#707070"}>Won the Cruelty Quest <br /></Typography>) : (<></>) }
               <Typography variant="subtitle" color={"#707070"}>
-                mana: {player.mana} <br />
-                attack: {player.attack} <br />
-                kindness: {player.kindness} <br />
-                cunning: {player.cunning} <br />
-                cruelty: {player.cruelty} <br />
-                cards left in deck: {player.deck.getNumCards()} <br />
-                cards in discard: {player.discard.getNumCards()} <br />
-                # unique guild members played: {player.uniqueGuildIDs.size} <br />
-                # unique relics in play: {player.uniqueRelicsInPlayIDs.size} <br />
-                total attack dealt: {player.totalAttackDealt} <br />
                 fulfilment: {player.fulfilment}
               </Typography>
             </Grid>
@@ -70,4 +77,4 @@ function PlayerInfo(props) {
   );
 }
 
-export default PlayerInfo;
+export default PlayerEndCard;

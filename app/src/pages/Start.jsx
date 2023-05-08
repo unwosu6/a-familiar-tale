@@ -4,15 +4,17 @@ import { Button } from "@mui/material";
 import Game from "../../../model/Game.js";
 
 function Start(props) {
-  const { setGame } = props;
+  const { setGame, setPlayers } = props;
   const navigate = useNavigate();
 
   const handleOnClickTwo = () => {
     setGame(new Game(2));
+    setPlayers([0, 1]);
     navigate("/game", { replace: true });
   };
   const handleOnClickThree = () => {
     setGame(new Game(3));
+    setPlayers([0, 1, 2]);
     navigate("/game", { replace: true });
   };
   return (

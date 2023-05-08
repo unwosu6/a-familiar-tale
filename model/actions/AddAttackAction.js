@@ -10,6 +10,7 @@ class AddAttackAction extends Action {
     let player = game.getPlayer(game.curPlayer);
     // add this.amount to the players attack on that turn
     player.attack += this.amount;
+    player.totalAttackDealt += this.amount;
   }
 
 }

@@ -8,7 +8,10 @@ function StartTurnButton(props) {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    game.getCurPlayer().drawHand();
+    let nextPlayer = game.getCurPlayer();
+    // nextPlayer.drawHand();
+    nextPlayer.mana = 0;
+    nextPlayer.attack = 0;
     // do ruins cards
   };
   return (

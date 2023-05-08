@@ -1,6 +1,6 @@
 class Choice {
   constructor() {
-    this.err = "";
+    this.error = "";
   }
 
   getPrompt() {
@@ -13,10 +13,10 @@ class Choice {
 
   getResult() {
     let result = {}
-    if (this.err !== "") {
-      result.err = this.err;
+    if (this.error !== "") {
+      result.error = this.error;
       result.success = false;
-      this.err = "";
+      this.error = "";
     } else {
       result.success = true;
       // game.printGameState();

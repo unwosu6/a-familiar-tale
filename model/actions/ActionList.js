@@ -10,6 +10,9 @@ class ActionList {
   }
 
   act(player) {
+    if (this.lst.length > 1) {
+      console.log("LST", this.lst);
+    }
     this.lst.forEach((action) => { action.act(player) });
   }
 }

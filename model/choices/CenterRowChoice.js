@@ -20,13 +20,13 @@ class CenterRowChoice extends Choice {
         game.greatBeyond.addCard(game.removeCenterRowCard(num));
         player.killMonster();
       } else {
-        err = "INSUFFICIENT ATTACK";
+        this.error = "INSUFFICIENT ATTACK";
       }
     } else {
       if (player.mana >= centerCard.cost) {
         player.discard.addCard(game.removeCenterRowCard(num));
       } else {
-        this.err = "INSUFFICIENT MANA";
+        this.error = "INSUFFICIENT MANA";
       }
     }
   }

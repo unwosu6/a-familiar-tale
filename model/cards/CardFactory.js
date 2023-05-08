@@ -2,6 +2,8 @@ import Card from "./Card.js";
 import {BasicType, Type} from "../util/enums.js";
 import AddManaAction from "../actions/AddManaAction.js";
 import AddAttackAction from "../actions/AddAttackAction.js";
+import DrawCardAction from "../actions/DrawCardAction.js";
+import DiscardCardAction from "../actions/DiscardCardAction.js";
 import { MainDeckCards, BasicSpiritCards } from "./CardLists.js";
 
 class CardFactory {
@@ -65,13 +67,40 @@ addCard(id, name, type, cost, description, quantity, fulfilment) {
       // +2 attack cards
       if (card.id === 16 ||
           card.id === 25) {
-        action = new AddAttackAction(1);
+        action = new AddAttackAction(2);
         card.addAction(action);
       }
       // +3 attack cards
       if (card.id === 10 ||
           card.id === 26) {
-        action = new AddAttackAction(1);
+        action = new AddAttackAction(3);
+        card.addAction(action);
+      }
+      // draw 1 card action
+      if (card.id === 2 ||
+          card.id === 3 ||
+          card.id === 15 ||
+          card.id === 30 ||
+          card.id === 31) {
+        action = new DrawCardAction(1);
+        card.addAction(action);
+      }
+
+      // draw 2 card action
+      if (card.id === 18) {
+        action = new DrawCardAction(2);
+        card.addAction(action);
+      }
+
+      // draw 3 card action
+      if (card.id === 23) {
+        action = new DrawCardAction(3);
+        card.addAction(action);
+      }
+
+      // discard card action
+      if (card.id === 3) {
+        action = new DiscardCardAction();
         card.addAction(action);
       }
       this.cards.push(card);
